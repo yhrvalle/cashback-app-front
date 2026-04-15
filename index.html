@@ -47,7 +47,7 @@
 
     <script>
         const API_URL = "https://cashback-app-backend.onrender.com";
-        //const API_URL = "http://localhost:8000"
+        // const API_URL = "http://localhost:8000"
         async function carregarHistorico() {
             try {
                 const response = await fetch(`${API_URL}/historico`);
@@ -66,6 +66,7 @@
                     });
                     tbody.innerHTML += `
                         <tr>
+                            <td>${item.ip_usuario}</td>
                             <td>${data_formatada}</td>
                             <td>R$ ${item.valor_compra.toFixed(2)}</td>
                             <td>R$ ${item.valor_descontado.toFixed(2)}</td>
