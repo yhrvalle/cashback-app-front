@@ -86,9 +86,12 @@
             const descontoRaw = document.getElementById("desconto").value || "0";
             const tipoRaw = document.getElementById("tipo").value;
             
+            if (tipoRaw != "false" || tipoRaw != "true") return alert("Insira um valor válido para o tipo de cliente");
             const cliente_vip = (tipoRaw === "true");
 
-            if (parseFloat(valorRaw) <= 0) return alert("Insira um valor de compra válido!");
+            // limite do decimal é 10 ^ 8
+            if (parseFloat(valorRaw) <= 0 || parseFloat(valorRaw) >= 100000000) return alert("Insira um valor de compra válido!");
+            
 
             try {
                 const response = await fetch(`${API_URL}/calcular`, {
