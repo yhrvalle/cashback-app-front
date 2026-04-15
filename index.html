@@ -108,7 +108,7 @@
 
                 const res = await response.json();
                 if (res.status === "sucesso") {
-                    document.getElementById("resultado").innerText = `Cashback Gerado: R$ ${res.cashback}`;
+                    document.getElementById("resultado").innerText = `Cashback Gerado: R$ ${res.cashback.toFixed(2)}`;
                     carregarHistorico();
                 }
             } catch (error) {
