@@ -47,7 +47,7 @@
 
     <script>
         const API_URL = "https://cashback-app-backend.onrender.com";
-
+        //const API_URL = "http://localhost:8000"
         async function carregarHistorico() {
             try {
                 const response = await fetch(`${API_URL}/historico`);
@@ -86,7 +86,7 @@
             const descontoRaw = document.getElementById("desconto").value || "0";
             const tipoRaw = document.getElementById("tipo").value;
             
-            const cliente_vip = (tipoRaw === "True");
+            const cliente_vip = (tipoRaw === "true");
 
             if (parseFloat(valorRaw) <= 0) return alert("Insira um valor de compra válido!");
 
